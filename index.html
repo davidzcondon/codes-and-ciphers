@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Codes and Ciphers</title>
+    <link rel="stylesheet" href="https://andybrewer.github.io/mvp/mvp.css">
+    <script src="codes.js"></script>
+</head>
+
+<body>
+<h1>Codes and Ciphers</h1>
+
+<h2>Test Cipher</h2>
+This is a test cipher which sets the output to be the input so that we can validate the html
+
+<form>
+<label for="input-nc">Input:</label>
+<input type="text" id="input-nc" name="input-nc" required size="10">
+<button type="button" onclick="noconvert()">Convert</button>
+
+<label for="output-nc">Output:</label>
+<input type="text" readonly="true" id="output-nc" name="output-nc" required size="10">
+</form>
+
+<h2>Simple Numerical Substitution Cipher</h2>
+This is a substitution cipher which replaces letters with numbers e.g. replace A with 1, B with 2 and so on until Z with 26.
+
+<form>
+<label for="input-snsc">Input:</label>
+<input type="text" id="input-snsc" name="input-snsc" required size="10">
+
+<button type="button" onclick="snscEncrypt()">Encrypt</button>
+
+<label for="output-snsc">Output:</label>
+<input type="text" readonly="true" id="output-snsc" name="output-snsc" required size="10">
+</form>
+
+</body>
+
+</html>
