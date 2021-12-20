@@ -41,6 +41,11 @@ function snscEncryptCharacter(c) {
 
 function snscEncrypt() {    
     inputValue = document.getElementById("input-snsc").value
+    outputValue = snscEncryptHelper(inputValue)
+    document.getElementById("output-snsc").value = outputValue
+}
+
+function snscEncryptHelper(inputValue) {
     inputValue = inputValue.toLowerCase()
     console.log("Value of input field: ", inputValue)
 
@@ -51,6 +56,55 @@ function snscEncrypt() {
         console.log("Processing character: ", c, outputC)
         outputValue += outputC + " "
     }
+    return outputValue.trim()
+}
 
-    document.getElementById("output-snsc").value = outputValue
+function snscDecryptCharacter(c) {
+    switch(c) {
+        case '1': return 'a';
+        case '2': return 'b';
+        case '3': return 'c';
+        case '4': return 'd';
+        case '5': return 'e';
+        case '6': return 'f';
+        case '7': return 'g';
+        case '8': return 'h';
+        case '9': return 'i';
+        case '10': return 'j';
+        case '11': return 'k';
+        case '12': return 'l';
+        case '13': return 'm';
+        case '14': return 'n';
+        case '15': return 'o';
+        case '16': return 'p';
+        case '17': return 'q';
+        case '18': return 'r';
+        case '19': return 's';
+        case '20': return 't';
+        case '21': return 'u';
+        case '22': return 'v';
+        case '23': return 'w';
+        case '24': return 'x';
+        case '25': return 'y';
+        case '26': return 'z';
+        case ' ': return ' ';
+        case '.': return '.';
+        default: return '?';
+    }
+}
+
+function snscDecrypt() {    
+    inputValue = document.getElementById("input-snsc-d").value
+    inputValueList = inputValue.split(" ");
+    console.log("Value of input field: ", inputValueList)
+
+    outputValue = ""
+
+    for (let c of inputValueList) {
+        outputC = snscDecryptCharacter(c)
+        console.log("Processing number: ", c, outputC)
+        outputValue += outputC
+    }
+
+    document.getElementById("output-snsc-d").value = outputValue
 }
